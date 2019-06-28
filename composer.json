@@ -1,0 +1,37 @@
+{
+	"name": "mgp25/rae-api",
+	"type": "library",
+	"description": "RAE API",
+	"keywords": ["RAE", "api"],
+	"homepage": "https://github.com/mgp25/RAE-API",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "mgp25",
+			"email": "me@mgp25.com"
+		}
+	],
+	"require": {
+		"php": ">=5.6",
+		"ext-curl": "*",
+		"lazyjsonmapper/lazyjsonmapper": "^1.6.1",
+		"netresearch/jsonmapper": "^1.0",
+		"guzzlehttp/guzzle": "^6.2",
+		"mgp25/rae-api": "^1.0"
+	},
+	"require-dev": {
+		"friendsofphp/php-cs-fixer": "^2.8.0"
+	},
+	"autoload": {
+        "psr-4": {
+            "RAE\\": "src/"
+        }
+    },
+	"scripts": {
+        "codestyle": [
+            "lazydoctor -c composer.json -pfo >/dev/null",
+            "php-cs-fixer fix --config=.php_cs.dist --allow-risky yes",
+            "php devtools/checkStyle.php x"
+        ]
+    }
+}
